@@ -1,0 +1,143 @@
+.banner_wrap{
+	margin-bottom: 75px;
+}
+.aside-1{
+	a{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	margin-bottom: 30px;
+	img{
+		max-width: 100%;
+		max-height: 100%;
+		position: relative;
+	}
+}
+.banner a{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.banner img{
+	max-width: 100%;
+	max-height: 100%;
+	position: relative;
+}
+.aside-2 a{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.aside-2 img{
+	max-width: 100%;
+	max-height: 100%;
+	position: relative;
+}
+
+@mixin shop-now($left,$bottom) {
+	width: 105px;
+	height: 40px;
+	background: $color;
+	position: absolute;
+	left: $left;
+	bottom: $bottom;
+	a{
+		width: 100%;
+		height: 100%;
+		display: block;
+		display: flex; /* Canh giữa bằng flex */
+	    justify-content: center;
+	    align-items: center;
+	}
+    @include a($font-size,#ffff,#000000);
+}
+.shop-now-1{
+	@include shop-now(545px,153px)
+}
+.shop-now-2{
+	@include shop-now(55px,111px)
+}
+
+@media screen and (max-width: 767px) {
+	.banner_wrap{
+		overflow: hidden;
+		.banner{
+			margin-bottom: 30px;
+			img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+		.aside-1{
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.aside-2{
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.shop-now-1{
+	@include shop-now(50%,25%)
+	}
+	.shop-now-2{
+	@include shop-now(14%,17%)
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.banner_wrap{
+		.banner{
+			margin-bottom: 10px;
+			
+		}
+		.aside-1{
+			width: 340px;
+			height: 190px;
+			float: left;
+			img{
+				width: 100%;
+			}
+		}
+		.aside-2{
+			width: 340px;
+			height: 190px;
+			float: right;
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.shop-now-1{
+	@include shop-now(71%,28%)
+	}
+	.shop-now-2{
+	@include shop-now(56%,27%)
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.banner_wrap{
+		.banner{
+			margin-bottom: 10px;
+			
+		}
+		.aside-1{
+			
+		}
+		.aside-2{
+			
+		}
+	}
+	.shop-now-1{
+	@include shop-now(68%,28%)
+	}
+	.shop-now-2{
+	@include shop-now(15%,17%)
+	}
+}
