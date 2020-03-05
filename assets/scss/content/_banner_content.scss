@@ -1,7 +1,11 @@
 .banner_wrap{
-	margin-bottom: 75px;
-}
-.aside-1{
+	margin-bottom: 72px;
+	.aside{
+    padding: 0 0 0 21px;
+    .aside-1{
+	padding: 0px;
+
+		position: relative;
 	a{
 		width: 100%;
 		height: 100%;
@@ -11,7 +15,25 @@
 	img{
 		max-width: 100%;
 		max-height: 100%;
-		position: relative;
+	}
+	.txt_aside-1_top{
+		position: absolute;
+		left: 57px;
+		top: 83px;
+		font-size: 16px;
+		font-family: $font-mont;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: #616161;
+	}
+	.txt_aside-1_bottom{
+		position: absolute;
+		left: 57px;
+		top: 102px;
+		font-size: 20px;
+		font-family: $font-mont;
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 }
 .banner a{
@@ -24,20 +46,72 @@
 	max-height: 100%;
 	position: relative;
 }
-.aside-2 a{
-	width: 100%;
-	height: 100%;
-	display: block;
-}
-.aside-2 img{
-	max-width: 100%;
-	max-height: 100%;
+.aside-2{
+	padding: 0px;
 	position: relative;
+	a{
+		width: 100%;
+		height: 100%;
+	}
+	img{
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.txt_aside-2_top{
+		position: absolute;
+		left: 39px;
+		top: 118px;
+		font-size: 16px;
+		font-family: $font-mont;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: #616161;
+	}
+	.txt_aside-2_bottom{
+		position: absolute;
+		left: 39px;
+		top: 137px;
+		font-size: 20px;
+		font-family: $font-mont;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
 }
 
-@mixin shop-now($left,$bottom) {
-	width: 105px;
-	height: 40px;
+	.banner-body{
+	padding: 0px;
+	}
+	.aside{
+		padding-left: 21px;
+		.aside-1{
+			width: 100%;
+		}
+		.aside-2{
+			width: 100%;
+		}
+	}
+}
+
+.banner{
+
+	position: relative;
+	width: 104%;
+	.txt_banner{
+		position: absolute;
+		left: 340px;
+		bottom: 201px;
+		span{
+			font-size: 30px;
+			font-family: $font-pacifico;
+		}
+	}
+}
+
+
+@mixin shop-now($w,$h,$left,$bottom,$f_size) {
+	width: $w;
+	height: $h;
 	background: $color;
 	position: absolute;
 	left: $left;
@@ -50,94 +124,275 @@
 	    justify-content: center;
 	    align-items: center;
 	}
-    @include a($font-size,#ffff,#000000);
+    @include a($f_size,white,#000000);
 }
 .shop-now-1{
-	@include shop-now(545px,153px)
+	@include shop-now(105px,40px,552px,153px,14px)
 }
 .shop-now-2{
-	@include shop-now(55px,111px)
+	@include shop-now(108px,40px,42px,111px,14px)
 }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 575px)  {
+	.banner_wrap{
+		margin-bottom: 30px;
+		overflow: hidden;
+		.banner-body{
+			padding: 15px;
+			.banner{
+				position: relative;
+				width: 100%;
+				img{
+					max-width: 100%;
+					max-height: 100%;
+				}
+				.txt_banner{
+					position: absolute;
+					width: 57%;
+					left: 39%;
+					bottom: 34%;
+					span{
+						font-size: 15px;
+					}
+				}
+			}
+		}
+		.aside{
+			padding-left: 15px;
+			.aside-1{
+				padding: 0px;
+				width: 100%;
+				margin-bottom: 15px;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+				.txt_aside-1_top{
+					left: 36px;
+					top: 72px;
+				}
+				.txt_aside-1_bottom{
+					left: 36px;
+					top: 91px;
+				}
+			}
+			.aside-2{
+				padding: 0px;
+				width: 100%;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		
+		
+	}
+	.shop-now-1{
+	@include shop-now(22%,11%,64%,24%,68%)
+	}
+	.shop-now-2{
+	@include shop-now(22%,11%,14%,28%,68%)
+	}
+
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
 	.banner_wrap{
 		overflow: hidden;
+		margin-bottom: 30px;
 		.banner{
-			margin-bottom: 30px;
+			margin-bottom: 15px;
 			img{
 				max-width: 100%;
 				max-height: 100%;
 			}
-		}
-		.aside-1{
-			img{
-				width: 100%;
-				height: 100%;
+			.txt_banner{
+				position: absolute;
+				width:100%;
+				left: 46%;
+				bottom: 35%;
+				span{
+					font-size: 22px;
+				}
 			}
 		}
-		.aside-2{
-			img{
-				width: 100%;
-				height: 100%;
+		.aside{
+			padding: 0px;
+			.aside-1{
+				margin: 0px;
+				padding: 0px 15px 0px 0px;
+				float: left;
+				height: 150px;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+				.txt_aside-1_top{
+				left: 36px;
+				top: 72px;
+				}
+				.txt_aside-1_bottom{
+					left: 36px;
+					top: 91px;
+				}
+			}
+			.aside-2{
+				padding: 0px;
+				float: right;
+				height: 150px;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+				.txt_aside-2_top{
+					left: 36px;
+					top: 32px;
+				}
+				.txt_aside-2_bottom{
+					left: 36px;
+					top: 51px;
+				}
 			}
 		}
+		
 	}
 	.shop-now-1{
-	@include shop-now(50%,25%)
+	@include shop-now(105px,40px,68%,24%,14px)
 	}
 	.shop-now-2{
-	@include shop-now(14%,17%)
+	@include shop-now(105px,40px,14%,17%,14px)
 	}
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
 	.banner_wrap{
+		margin-bottom: 30px;
 		.banner{
+			width: 100%;
 			margin-bottom: 10px;
-			
-		}
-		.aside-1{
-			width: 340px;
-			height: 190px;
-			float: left;
 			img{
 				width: 100%;
 			}
+			.txt_banner{
+				position: absolute;
+				width:100%;
+				left: 44%;
+				bottom: 34%;
+				span{
+					font-size: 30px;
+				}
+			}
+			
 		}
-		.aside-2{
-			width: 340px;
-			height: 190px;
-			float: right;
-			img{
+		.aside{
+			padding: 0px;
+			.aside-1{
+				margin:0px;
+				padding:0 15px 0 0;
 				width: 100%;
+				height: 190px;
+				float: left;
+				img{
+					width: 100%;
+				}
+				
+			}
+			.aside-2{
+				padding: 0px;
+				width: 100%;
+				height: 190px;
+				float: right;
+				img{
+					width: 100%;
+				}
+				.txt_aside-2_top{
+					left: 39px;
+					top: 50px;
+				}
+				.txt_aside-2_bottom{
+					left: 39px;
+					top: 70px;
+				}
 			}
 		}
 	}
 	.shop-now-1{
-	@include shop-now(71%,28%)
+	@include shop-now(105px,40px,71%,28%,14px)
 	}
 	.shop-now-2{
-	@include shop-now(56%,27%)
+	@include shop-now(105px,40px,11%,27%,14px)
 	}
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.banner_wrap{
-		.banner{
-			margin-bottom: 10px;
-			
+		margin-bottom: 30px;
+		.banner-body{
+			margin-bottom: 20px;
+				.banner{
+				width: 100%;
+				margin-bottom: 10px;
+				a{
+					img{
+						width: 100%;
+					}
+				}
+				.txt_banner{
+					left: 480px;
+					bottom: 253px;
+					span{
+						font-size: 34px;
+					}
+				}
+				
+			}
 		}
-		.aside-1{
-			
+		.aside{
+			padding: 0px;
+			.aside-1{
+				float: left;
+				width: 100%;
+				padding-right: 15px;
+				img{
+					width: 100%;
+				}
+				.txt_aside-1_top{
+					left: 57px;
+					top: 83px;
+					font-size: 22px;
+				}
+				.txt_aside-1_bottom{
+					left: 57px;
+					top: 106px;
+					font-size: 26px;
+				}
+			}
+			.aside-2{
+				float: right;
+				width: 100%;
+				padding-left: 15px;
+				img{
+					height: 258px;
+					width: 100%;
+				}
+				.txt_aside-2_top{
+					left: 57px;
+					top: 83px;
+					font-size: 22px;
+				}
+				.txt_aside-2_bottom{
+					left: 57px;
+					top: 106px;
+					font-size: 26px;
+				}
+			}
 		}
-		.aside-2{
-			
-		}
+		
 	}
 	.shop-now-1{
-	@include shop-now(68%,28%)
+	@include shop-now(110px,40px,75%,28%,16px)
 	}
 	.shop-now-2{
-	@include shop-now(15%,17%)
+	@include shop-now(110px,40px,12%,25%,16px)
 	}
 }

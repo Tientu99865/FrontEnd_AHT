@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:300,400,700|Pacifico&display=swap');
 $font-mont : 'Montserrat', sans-serif;
 $font-openSan : 'Open Sans', sans-serif;
+$font-pacifico : 'Pacifico', cursive;
 $color:#8262b5;
 $b_color: #222222;
 $font-size:14px;
@@ -19,6 +20,9 @@ $hover-color:#8262b5;
 		text-decoration: none;
 	}
 }
+}
+.wrapper{
+	overflow: hidden;
 }
 .header__top{
 	height: 46px;
@@ -52,13 +56,18 @@ $hover-color:#8262b5;
 
 }
 .header__bottom{
+	width: 100%;
 	height: 80px;
 	border: 1px #dddddd solid;
 	margin-bottom: 30px;
 	display: flex;
 	&__logo{
 		a{
+			width: 100%;
 			display: block;
+			img{
+				width: 100%;
+			}
 		}
 		float: left;
 		margin: 20px 0 0 30px
@@ -108,11 +117,7 @@ $hover-color:#8262b5;
 		}
 	}
 }
-.menu-ipad{
-		display: none;
-	}
-
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 575px)  {
 	.wrapper{
 		overflow: hidden;
 	}
@@ -138,10 +143,15 @@ $hover-color:#8262b5;
 		}
 	}
 	.header__bottom{
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 0px;
 		&__logo{
-			margin-left: 15px;
+			width: 50%;
+			margin: 20px 0 0 15px;
 		}
 		&__menu{
+			float: right;
 			margin-right: 15px;
 			.show-menu-btn,.hide-menu-btn{
 			    display: block;
@@ -158,6 +168,9 @@ $hover-color:#8262b5;
 			    padding: 80px 0;
 			    line-height: normal;
 			    transition: 0.7s;
+			  }
+			  .menu li{
+			  	float: none;
 			  }
 			  .menu li a{
 			  	color: white;
@@ -176,7 +189,89 @@ $hover-color:#8262b5;
 			
 		}
 		&__icon{
-			display: none;
+			display: block;
+			margin: 20px 15px 0 0;
+			a{
+				margin-left: 15px;
+			}
+		}
+	}
+	
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.wrapper{
+		overflow: hidden;
+	}
+	.header__top{
+		width: 100%;
+		height: 70px;
+		&__left{
+			margin-left: 5px;
+			width: 70%;
+			span{
+			font-size: 14px;
+			}
+		}
+		&__right{
+			width: 25%;
+			margin-right: 5px;
+			span{
+				display: none;
+			}
+			&__setting{
+				margin-right: 15px;
+			}
+		}
+	}
+	.header__bottom{
+		display: inline-block;
+		&__logo{
+			margin-left: 15px;
+		}
+		&__menu{
+			float: right;
+			margin-right: 15px;
+			.show-menu-btn,.hide-menu-btn{
+			    display: block;
+			  }
+			  .menu{
+			  	z-index: 1000;
+			    position: fixed;
+			    width: 100%;
+			    height: 100vh;
+			    background: #333;
+			    right: -100%;
+			    top: 0;
+			    text-align: center;
+			    padding: 80px 0;
+			    line-height: normal;
+			    transition: 0.7s;
+			  }
+			  .menu li{
+			  	float: none;
+			  }
+			  .menu li a{
+			  	color: white;
+			    display: block;
+			    padding: 20px;
+			  }
+			  .hide-menu-btn{
+			  	color: white;
+			    position: absolute;
+			    top: 40px;
+			    right: 40px;
+			  }
+			  #chk:checked ~ .menu{
+			    right: 0;
+			  }
+			
+		}
+		&__icon{
+			display: block;
+			margin: 20px 15px 0 0;
+			a{
+				margin-left: 15px;
+			}
 		}
 	}
 	
@@ -216,6 +311,9 @@ $hover-color:#8262b5;
 		    line-height: normal;
 		    transition: 0.7s;
 		  }
+		  .menu li{
+			  	float: none;
+			  }
 		  .menu li a{
 		  	color: white;
 		    display: block;
@@ -234,12 +332,20 @@ $hover-color:#8262b5;
 }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px)  {
+@media only screen and (min-width: 992px) and (max-width: 1199px)  {
+.header__top{
+	&__left{
+		margin-left: 5px;
+	}
+}
 .header__bottom{
 	display: block;
+	&__logo{
+		margin: 20px 0 0 15px;
+	}
 	&__menu{
 		float: right;
-		margin-right: 25px;
+		margin-right: 15px;
 		.show-menu-btn,.hide-menu-btn{
 		    display: block;
 		  }
@@ -256,6 +362,9 @@ $hover-color:#8262b5;
 		    line-height: normal;
 		    transition: 0.7s;
 		  }
+		  .menu li{
+			  	float: none;
+			  }
 		  .menu li a{
 		  	color: white;
 		    display: block;
@@ -270,6 +379,12 @@ $hover-color:#8262b5;
 		  #chk:checked ~ .menu{
 		    right: 0;
 		  }
+	}
+	&__icon{
+		margin: 20px 15px 0 0;
+		a{
+			margin-left: 15px;
+		}
 	}
 }
 }

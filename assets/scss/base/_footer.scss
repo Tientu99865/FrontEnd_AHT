@@ -19,13 +19,18 @@
 	background-color: #222222;
 	.footer{
 		width: 100%;
-		height: 347px;
-		padding-top: 60px;
+		height: 346px;
+		padding:60px 0px 0px 0px;
 		.about{
 			width: 100%;
 			height: 245px;
 			.about-title{
 				@include title(left,#f7f7f7,261px);
+				h4{
+					font-size: 16px;
+					letter-spacing: 0.05em;
+					margin-bottom: 26px;
+				}
 			}
 			.about-body{
 				width: 261px;
@@ -44,12 +49,21 @@
 				a{
 					color: #828282;
 					margin-right: 30px;
+					&:hover{
+						color: white;
+						text-decoration: none;
+					}
 				}
 			}
 		}
 		.navigation{
 			.navigation-title{
 				@include title(left,#f7f7f7,360px);
+				h4{
+					font-size: 16px;
+					letter-spacing: 0.05em;
+					margin-bottom: 26px;
+				}
 			}
 			.navigation-body{
 				a{
@@ -68,6 +82,11 @@
 		.location{
 			.location-title{
 				@include title(right,#f7f7f7,261px);
+				h4{
+					font-size: 16px;
+					letter-spacing: 0.05em;
+					margin-bottom: 26px;
+				}
 			}
 			.location-body{
 				float: right;
@@ -79,6 +98,12 @@
 					i{
 						margin-right: 10px;
 					}
+					a{
+						color: #888888;
+						&:hover{
+							color: white;
+						}
+					}
 				}
 
 			}
@@ -86,7 +111,22 @@
 		}
 	}
 	.stick-footer{
+	    width: 100%;
+		display: inline-block;
 		border-top:1px #393939 solid;
+		.copyright{
+			font-size: 14px;
+			padding: 0px;
+			small{
+				font-size: 14px;
+				i{
+					font-size: 14px;
+				}
+				a{
+					font-size: 14px;
+				}
+			}
+		}
 		i{
 			color: red;
 		}
@@ -94,7 +134,9 @@
 			color: white;
 		}
 		.visa-icon{
+			padding: 0px;
 			i{
+				font-size: 23px;
 				color: #888888;
 				float: right;
 				margin-left: 5px;
@@ -103,20 +145,48 @@
 	}
 	
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 575px)  {
 	.footer-wrap{
 		overflow: hidden;
 		height: auto;
 		.footer{
+			height: auto;
+			padding: 30px 0px 0px 15px;
 			.about{
-				display: none;
+				height: auto;
+				display: block;
+				margin-bottom: 30px;
+				.about-title{
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.about-body{
+					width: 100%;
+				}
 			}
 			.location{
-				display: none;
+				margin-bottom: 30px;
+				.location-title{
+					float: left;
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.location-body{
+					float: left;
+					width: 100%;
+				}
 			}
 			.navigation{
+				margin-bottom: 30px;
 				.navigation-title{
 					width: 100%;
+					hr{
+						width: 95%;
+					}
 				}
 				.navigation-body{
 					flex-wrap: unset;
@@ -124,24 +194,171 @@
 			}
 		}
 		.stick-footer{
-			.visa-icon{
-				display: none;
+			padding-left: 15px;
+			.copyright{
+				margin-bottom: 15px;
+			}
+			.visa-icon i{
+				float: left;
 			}
 		}
 	}	
-}	
-@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
 	.footer-wrap{
 		overflow: hidden;
 		height: auto;
 		.footer{
+			height: auto;
+			padding: 30px 0px 0px 15px;
+			.about{
+				height: auto;
+				display: block;
+				margin-bottom: 30px;
+				.about-title{
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.about-body{
+					width: 100%;
+				}
+			}
 			.location{
-				display: none;
+				margin-bottom: 30px;
+				.location-title{
+					float: left;
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.location-body{
+					float: left;
+					width: 100%;
+				}
+			}
+			.navigation{
+				margin-bottom: 30px;
+				.navigation-title{
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.navigation-body{
+					flex-wrap: unset;
+				}
+			}
+		}
+		.stick-footer{
+			padding-left: 15px;
+			.copyright{
+				margin-bottom: 15px;
+			}
+			.visa-icon i{
+				float: left;
+			}
+		}
+	}	
+}	
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.footer-wrap{
+		overflow: hidden;
+		height: auto;
+		.footer{
+			height: auto;
+			padding: 30px 0px 30px 0px;
+			.about{
+				height: auto;
+				margin-bottom: 30px;
+				.about-title{
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.about-body{
+					width: 100%;
+				}
+			}
+			.location{
+				.location-title{
+					float: left;
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.location-body{
+					float: left;
+					width: 100%;
+				}
+				
 			}
 			.navigation{
 				.navigation-title{
+				width: 100%;
 				hr{
-					width: 320px;
+					width: 95%;
+				}
+				}
+				.navigation-body{
+					flex-wrap: unset;
+				}
+			}
+			
+		}
+		.copyright{
+			width: 400px;
+			float: left;
+		}
+		.visa-icon{
+			width: 300px;
+			float: right;
+		}
+	}	
+}	
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	.footer-wrap{
+		overflow: hidden;
+		height: auto;
+		.footer{
+			height: auto;
+			padding: 30px 0px 30px 0px;
+			.about{
+				height: auto;
+				margin-bottom: 30px;
+				.about-title{
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.about-body{
+					width: 100%;
+				}
+			}
+			.location{
+				.location-title{
+					float: left;
+					width: 100%;
+					hr{
+						width: 95%;
+					}
+				}
+				.location-body{
+					float: left;
+					width: 100%;
+				}
+				
+			}
+			.navigation{
+				.navigation-title{
+				width: 100%;
+				hr{
+					width: 95%;
 				}
 				}
 				.navigation-body{

@@ -1,27 +1,31 @@
 .blog-wrap{
 	width: 100%;
-	height: 710px;
-	padding-top: 80px;
+	height: 708px;
+	padding-top: 71px;
 	background-image: url("../../images/background.png");
 	.blog{
 		width: 100%;
 		height: 100%;
   		.blog-title{
-  			margin-bottom: 50px
+  			margin-bottom: 33px
   		}
 		.flex-blog{
 			height: 100%;
 			text-align: center;
 			span{
+				margin-left: 11px;
 				font-size: 12px;
 				font-weight: bold;
 				text-transform: uppercase;
 				letter-spacing: 0.5em;
 				color: $color;
 			}
-			h2{
+			h3{
+				margin: 8px 0 23px 5px;
 				font-weight: bold;
 				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				font-size: 24px;
 			}
 			hr{
 				width: 50px;
@@ -131,6 +135,9 @@
 					padding: 16px;
 					border-bottom: 1px #ededed solid;
 					a{
+						white-space: nowrap;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
 						font-weight: bold;
 						text-decoration: none;
 						color: black;
@@ -148,7 +155,8 @@
 					}
 				}
 				.blog-interactive{
-					padding: 20px;
+					display: inline-block;
+					padding: 17px;
 					font-size: $font-size;
 					color: #c0c0c0;
 					.comment{
@@ -183,10 +191,9 @@
 		}
 	}
 }
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 575px)  {
 	.blog-wrap{
 		overflow: hidden;
-		height: auto;
 		.blog{
 			.blog-slide{
 				.blog-content{
@@ -194,6 +201,11 @@
 						overflow: hidden;
 						height: auto;
 						.blog-text{
+							a{
+								white-space: nowrap;
+							    overflow: hidden;
+							    text-overflow: ellipsis;
+							}
 							padding: 10px;
 							height: auto;
 						}
@@ -206,7 +218,34 @@
 		}
 	}
 }
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.blog-wrap{
+		overflow: hidden;
+		.blog{
+			.blog-slide{
+				.blog-content{
+					.blog-details{
+						overflow: hidden;
+						height: auto;
+						.blog-text{
+							a{
+								white-space: nowrap;
+							    overflow: hidden;
+							    text-overflow: ellipsis;
+							}
+							padding: 10px;
+							height: auto;
+						}
+						.blog-interactive{
+							padding: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.blog-wrap{
 		overflow: hidden;
 		height: auto;
@@ -217,6 +256,11 @@
 						overflow: hidden;
 						height: auto;
 						.blog-text{
+							a{
+								white-space: nowrap;
+							    overflow: hidden;
+							    text-overflow: ellipsis;
+							}
 							padding: 10px;
 							height: auto;
 						}
